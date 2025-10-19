@@ -5,7 +5,8 @@
   "scripts": {
     "build": "directus start",
     "start": "directus start",
-    "dev": "directus start"
+    "dev": "directus start",
+    "postinstall": "npx directus bootstrap"
   },
   "keywords": [],
   "author": "",
