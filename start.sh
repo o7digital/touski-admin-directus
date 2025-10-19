@@ -9,16 +9,14 @@ echo "🏠 Database host: $DB_HOST"
 echo "📱 Database port: $DB_PORT"
 echo "🗄️  Database name: $DB_DATABASE"
 
-# Ejecutar bootstrap para instalar tablas de Directus
-echo "⚡ Running Directus bootstrap..."
-npx directus bootstrap
+# Forcer l'installation des tables système Directus
+echo "⚡ Forcing Directus database initialization..."
+npx directus database install --yes
 
-# Verificar si bootstrap fue exitoso
-if [ $? -eq 0 ]; then
-    echo "✅ Bootstrap completed successfully!"
-    echo "🚀 Starting Directus server..."
-    npx directus start
-else
-    echo "❌ Bootstrap failed. Trying to start anyway..."
-    npx directus start
-fi
+# Appliquer le schéma personnalisé
+echo "📋 Applying custom schema..."
+npx directus schema apply --yes ./schema.json
+
+# Démarrer Directus
+echo "🚀 Starting Directus server..."
+npx directus start
