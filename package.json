@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "directus start",
-    "start": "directus start",
-    "dev": "directus start",
-    "postinstall": "npx directus bootstrap"
+  "build": "directus start",
+  "start": "npx directus bootstrap && directus start",
+  "dev": "directus start"
   },
   "keywords": [],
   "author": "",
