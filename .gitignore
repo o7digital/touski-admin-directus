@@ -27,3 +27,6 @@ Thumbs.db
 
 # SQLite database lock (deja solo el .db real)
 *.db-journal
+data.db
+*.db-shm
+*.db-wal
